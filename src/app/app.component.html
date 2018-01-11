@@ -14,10 +14,13 @@
       <div class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a target="_blank" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Buy</a>
+            <a target="_blank" class="nav-link" href="https://www.linkedin.com/in/sam-baeck-957325aa/"><i class="fas fa-user"></i> Founder</a>
+          </li>
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fas fa-dollar-sign"></i> Buy</a>
           </li>
         </ul>
 
@@ -33,10 +36,15 @@
   </nav>
 </header>
 
+<particles id="particles" [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<!--<particles id="particles" [params]="myParams" [width]="width" [height]="height"></particles>-->
+<div id="overlay">[Your content here]</div>
+
+
 <section class="jumbotron text-center">
   <div class="container">
     <img src="./assets/animated.gif" alt="">
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+    <p class="lead text-muted">The world’s only enterprise blockchain solution for decentralized fidget spinnerstangle.jpg</p>
     <p>
       <a href="#" class="btn btn-primary">Main call to action</a>
       <a href="#" class="btn btn-secondary">Secondary action</a>

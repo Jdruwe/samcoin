@@ -4,6 +4,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import {AppComponent} from './app.component';
+import {ParticlesModule} from 'angular-particle';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {AppComponent} from './app.component';
     BrowserModule,
     FormsModule,
     routing,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,7 +14,6 @@
   background-color: #f5f5f5;
 }
 
-
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
@@ -32,6 +31,9 @@ code {
   font-size: 80%;
 }
 
+/* Navigation
+-------------------------------------------------- */
+
 .navbar-custom {
   background-color: $blue;
 }
@@ -39,12 +41,12 @@ code {
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-  color: rgba(255,255,255,.8);
+  color: rgba(255, 255, 255, .8);
 }
 
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
 }
 
 /* change the color of active or hovered links */
@@ -57,11 +59,30 @@ code {
 .navbar-custom .dropdown-menu {
   background-color: $teal;
 }
+
 .navbar-custom .dropdown-item {
   color: #ffffff;
 }
+
 .navbar-custom .dropdown-item:hover,
 .navbar-custom .dropdown-item:focus {
   color: #333333;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255, 255, 255, .5);
+}
+
+/* Particles
+-------------------------------------------------- */
+
+#particles {
+  background-color: red;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:-1;
+}
+
+#overlay {
+  position: relative;
 }
