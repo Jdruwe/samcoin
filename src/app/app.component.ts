@@ -11,20 +11,17 @@ export class AppComponent implements OnInit {
 
   myStyle: object = {};
   myParams: object = {};
-  width = 100;
-  height = 100;
 
   ngOnInit() {
     this.myStyle = {
-      'position': 'fixed',
+      'position': 'absolute',
       'width': '100%',
       'height': '100%',
       'z-index': -1,
       'top': 0,
       'left': 0,
       'right': 0,
-      'bottom': 0,
-      'background': '#b61924'
+      'bottom': 0
     };
 
     this.myParams = {
@@ -34,59 +31,24 @@ export class AppComponent implements OnInit {
           density: {enable: true, value_area: 800}
         },
         color: {
-          value: '#ffffff'
+          value: '#007bff'
         },
         shape: {
           type: 'circle',
           stroke: {width: 0, color: '#000000'},
-          polygon: {nb_sides: 5}
+          polygon: {nb_sides: 3}
+        },
+        size: {
+          value: 4,
+          random: true
         },
         line_linked: {
           enable: true,
           distance: 150,
-          color: '#ffffff',
+          color: '#007bff',
           opacity: 0.4,
           width: 1
         },
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: {
-            enable: true,
-            mode: 'repulse'
-          },
-          onclick: {
-            enable: true,
-            mode: 'push'
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
       }
     };
   }
