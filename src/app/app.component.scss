@@ -164,7 +164,7 @@ code {
   background: linear-gradient(to right, $yellow, $blue);
 
   .table-bordered td, .table-bordered th {
-    border: 2px solid $white;
+    border: 1px solid $white;
   }
 
   &__title {
@@ -183,11 +183,12 @@ code {
     letter-spacing: +.05em;
 
     &--primary {
-      background-color: saturate($teal, 70%);
+      //background-color: saturate(#5513AD, 70%);
+      background-color: $pink
     }
 
     &--secondary {
-      background-color: darken($blue, 10%);
+      background-color: $indigo;
     }
 
   }
@@ -196,18 +197,18 @@ code {
     font-weight: 400;
 
     &--primary {
-      background-color: lighten($teal, 40%);
+      background-color: lighten($pink, 30%);
     }
 
     &--secondary {
-      background-color: lighten($teal, 50%);
+      background-color: lighten($pink, 35%);
     }
   }
 
   &-availability {
 
     .fa-check {
-      color: darken($blue, 20%);
+      color: darken($indigo, 20%);
     }
 
     .fa-minus {
@@ -215,11 +216,11 @@ code {
     }
 
     &--primary {
-      background-color: lighten($blue, 30%);
+      background-color: lighten($indigo, 40%);
     }
 
     &--secondary {
-      background-color: lighten($blue, 40%);
+      background-color: lighten($indigo, 45%);
     }
   }
 }
