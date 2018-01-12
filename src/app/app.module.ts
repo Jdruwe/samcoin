@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import {AppComponent} from './app.component';
 import {ParticlesModule} from 'angular-particle';
+// import {CountUpModule} from 'countup.js-angular2';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {ParticlesModule} from 'angular-particle';
     FormsModule,
     routing,
     NgbModule.forRoot(),
-    ParticlesModule
+    ParticlesModule,
+    // CountUpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
