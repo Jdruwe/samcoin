@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
           enable: true,
           distance: 150,
           color: '#007bff',
-          opacity: 0.4,
+          opacity: 0.18,
           width: 1
         },
       }

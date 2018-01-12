@@ -74,18 +74,21 @@ code {
 -------------------------------------------------- */
 
 .intro {
+
   background-color: transparent;
+  margin-bottom: 0;
 
   &__text {
-    background-color: rgba(200, 200, 200, 0.1);
-    border-radius: 5px;
-    padding: 20px;
+
+    color: $blue;
+    //background-color: rgba(200, 200, 200, 0.1);
+    //border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     max-width: 800px;
     font-weight: 300;
-    font-size: 1.3rem;
-    margin-bottom: 30px;
+    font-size: 1.6rem;
   }
 }
 
