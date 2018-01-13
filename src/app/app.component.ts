@@ -11,6 +11,59 @@ export class AppComponent implements OnInit {
 
   myStyle: object = {};
   myParams: object = {};
+  countOptions: object = {};
+  currencyCountOptions: object = {};
+
+  single: any[] = [
+    {
+      'name': 'Per second',
+      'series': [
+        {
+          'name': 'Jan 2016',
+          'value': 0
+        },
+        {
+          'name': 'Apr 2016',
+          'value': 115
+        },
+        {
+          'name': 'Jul 2016',
+          'value': 275
+        },
+        {
+          'name': 'Oct 2016',
+          'value': 300
+        },
+        {
+          'name': 'Jan 2017',
+          'value': 400
+        },
+        {
+          'name': 'Apr 2017',
+          'value': 650
+        },
+        {
+          'name': 'Jul 2017',
+          'value': 700
+        },
+        {
+          'name': 'Oct 2017',
+          'value': 815
+        },
+        {
+          'name': 'Jan 2018',
+          'value': 1250
+        }
+      ]
+    }
+  ];
+
+  colorScheme = {
+    domain: ['#fd7e14']
+  };
+
+  // line, area
+  autoScale = true;
 
   ngOnInit() {
     this.myStyle = {
@@ -50,6 +103,22 @@ export class AppComponent implements OnInit {
           width: 1
         },
       }
+    };
+
+    this.countOptions = {
+      useEasing: true,
+      useGrouping: true,
+      separator: ',',
+      decimal: '.',
+      autostart: false
+    };
+
+    this.currencyCountOptions = {
+      useEasing: true,
+      useGrouping: true,
+      separator: ',',
+      decimal: '.',
+      prefix: '$'
     };
   }
 }

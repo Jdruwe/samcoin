@@ -97,12 +97,6 @@
   optionalDependencies:
     node-sass "^4.3.0"
 
-"@angular/common@^4.2.4":
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.4.6.tgz#4b81420724e0828a0e839b95a55eb1a7e83918f2"
-  dependencies:
-    tslib "^1.7.1"
-
 "@angular/common@^5.0.0":
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.1.3.tgz#db517c00a95f72885eb2091098eaed4f95494a63"
@@ -121,12 +115,6 @@
 "@angular/compiler@^5.0.0":
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.1.3.tgz#125008477895aee1bf71294bf981a4ba184c1e59"
-  dependencies:
-    tslib "^1.7.1"
-
-"@angular/core@^4.2.4":
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.4.6.tgz#13031fd10dcfe438875419b38f21120958bc2354"
   dependencies:
     tslib "^1.7.1"
 
@@ -1224,14 +1212,10 @@ cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
 
-countup.js-angular2@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/countup.js-angular2/-/countup.js-angular2-1.1.0.tgz#05881a3b4feaeaa221d3f4aac892a152600f33be"
+countup.js-angular2@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/countup.js-angular2/-/countup.js-angular2-1.1.1.tgz#84a5d3ea23e45bc69b203f08a3119c36e2b52441"
   dependencies:
-    "@angular/common" "^4.2.4"
-    "@angular/compiler" "^5.0.0"
-    "@angular/compiler-cli" "^5.0.0"
-    "@angular/core" "^4.2.4"
     countup.js "^1.9.3"
 
 countup.js@^1.9.3:
@@ -3651,6 +3635,10 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+ngx-scrollspy@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-scrollspy/-/ngx-scrollspy-1.2.0.tgz#3832a8db73b91cf36d9ab39fbda1fc4ceffe0fb6"
 
 no-case@^2.2.0:
   version "2.3.2"

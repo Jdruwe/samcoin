@@ -151,28 +151,67 @@
   </div>
 </section>
 
+<section class="jumbotron graph">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6">
+        <p class="graph__title">The Fastest Growing Network</p>
+        <p class="graph__text">
+          Thanks to incentivization, Samcoin’s network has grown to 1,250 spinning fidgets per second since launch in 2016, meaning Samcoin’s peer-to-peer network is one of the largest in the world.
+        </p>
+        <p class="graph__text">
+          More spinning fidgets means more secure services, and more capacity for end-users to access Samcoin from anywhere in the world, 24/7.
+        </p>
+        <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i
+          class="fas fa-chart-line"></i> Network Stats</a>
+        <p></p>
+      </div>
+      <div class="col-md-6">
+        <ngx-charts-line-chart
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [showXAxisLabel]="false"
+          [showYAxisLabel]="true"
+          yAxisLabel="Spinning / Second"
+          [autoScale]="autoScale">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="jumbotron text-center statistics">
   <div class="container">
 
     <div class="statistics__title">STATISTICS</div>
 
     <div class="row">
-      <div class="col-sm statistics__data">
-        <p class="statistics__value">59,699,000</p>
+      <div class="col-sm">
+        <p class="statistics__value" [countUp]="countOptions" startVal="0" duration="4" endVal="59699000">0</p>
         <p class="statistics__label">MAXIMUM COIN SUPPLY</p>
       </div>
-      <div class="col-sm statistics__data">
-        <p class="statistics__value">$72.25</p>
+      <div class="col-sm">
+        <p class="statistics__value" [countUp]="currencyCountOptions" startVal="0" duration="4" decimals="2" endVal="72.25">$0</p>
         <p class="statistics__label">PRICE</p>
       </div>
-      <div class="col-sm statistics__data">
-        <p class="statistics__value">$120,225,125,558</p>
+      <div class="col-sm">
+        <p class="statistics__value" [countUp]="countOptions" startVal="0" duration="4" endVal="873944">0</p>
+        <p class="statistics__label">HOURS OF SPINNING</p>
+      </div>
+      <div class="col-sm">
+        <p class="statistics__value" [countUp]="countOptions" startVal="0" duration="4" endVal="120225125558">0</p>
         <p class="statistics__label">TOTAL MARKET CAP</p>
       </div>
     </div>
 
   </div>
 </section>
+
 
 <footer class="footer">
   <div class="container">

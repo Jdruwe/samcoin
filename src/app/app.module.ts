@@ -5,8 +5,8 @@ import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import {AppComponent} from './app.component';
 import {ParticlesModule} from 'angular-particle';
-// import {CountUpModule} from 'countup.js-angular2';
-
+import {CountUpModule} from 'countup.js-angular2';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import {ParticlesModule} from 'angular-particle';
     routing,
     NgbModule.forRoot(),
     ParticlesModule,
-    // CountUpModule
+    CountUpModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
