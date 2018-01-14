@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {ParticlesModule} from 'angular-particle';
 import {CountUpModule} from 'countup.js-angular2';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     NgbModule.forRoot(),
     ParticlesModule,
     CountUpModule,
-    NgxChartsModule
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

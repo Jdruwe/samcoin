@@ -39,6 +39,9 @@
   </nav>
 </header>
 
+<img style="display: none;" id="fidget" src="./assets/fidget.png" alt="The Scream">
+<canvas style="position: absolute; z-index: -1" id="spinningFidgets"></canvas>
+
 <particles id="particles" [params]="particleParams" [style]="particleStyle"></particles>
 
 <section class="jumbotron text-center intro">
@@ -48,7 +51,7 @@
     <p>
       <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i
         class="fas fa-play-circle"></i> Watch Video</a>
-      <a href="#" class="btn btn-warning"><i
+      <a href="#" (click)="loop()" class="btn btn-warning"><i
         class="fas fa-dollar-sign"></i> Buy Now</a>
     </p>
   </div>

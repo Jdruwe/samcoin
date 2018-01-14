@@ -1,11 +1,19 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
+import {FidgetSpinner} from './ball';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+
+  canvas: any;
+  image: any;
+  ctx: any;
+  width: number;
+  height: number;
+  balls: FidgetSpinner[] = [];
 
   navigationCollapsed = true;
 
@@ -111,4 +119,42 @@ export class AppComponent {
     decimal: '.',
     prefix: '$'
   };
+
+  static random(min, max) {
+    // if min = 10 max = 15 random var = 0.1544465; it will return approzimately 10 because of math.floor
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  ngAfterViewInit(): void {
+    this.canvas = document.querySelector('canvas');
+    this.image = document.getElementById('fidget');
+    this.ctx = this.canvas.getContext('2d');
+    this.width = this.canvas.width = document.querySelector('.intro').clientWidth;
+    this.height = this.canvas.height = document.querySelector('.intro').clientHeight * 2;
+  }
+
+  loop() {
+
+    console.log('loop called');
+
+    this.ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+    this.ctx.fillRect(0, 0, this.width, this.height);
+
+    while (this.balls.length < 25) {
+      const x = AppComponent.random(0, this.width);
+      const y = AppComponent.random(0, this.height);
+      const velX = AppComponent.random(-7, 7);
+      const velY = AppComponent.random(-7, 7);
+      const ball = new FidgetSpinner(x, y, velX, velY, 15);
+      this.balls.push(ball);
+    }
+
+    for (let i = 0; i < this.balls.length; i++) {
+      this.balls[i].draw(this.ctx, this.image);
+      this.balls[i].update(this.width, this.height);
+    }
+
+    requestAnimationFrame(() => this.loop());
+  }
+
 }
