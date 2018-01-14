@@ -5,16 +5,11 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  navbarCollapsed = true;
+  navigationCollapsed = true;
 
-  myStyle: object = {};
-  myParams: object = {};
-  countOptions: object = {};
-  currencyCountOptions: object = {};
-
-  single: any[] = [
+  graphData = [
     {
       'name': 'Per second',
       'series': [
@@ -58,67 +53,62 @@ export class AppComponent implements OnInit {
     }
   ];
 
-  colorScheme = {
+  graphColorScheme = {
     domain: ['#fd7e14']
   };
 
-  // line, area
-  autoScale = true;
+  particleStyle = {
+    'position': 'absolute',
+    'width': '100%',
+    'height': '100%',
+    'z-index': -1,
+    'top': 0,
+    'left': 0,
+    'right': 0,
+    'bottom': 0
+  };
 
-  ngOnInit() {
-    this.myStyle = {
-      'position': 'absolute',
-      'width': '100%',
-      'height': '100%',
-      'z-index': -1,
-      'top': 0,
-      'left': 0,
-      'right': 0,
-      'bottom': 0
-    };
+  particleParams = {
+    particles: {
+      number: {
+        value: 80,
+        density: {enable: true, value_area: 800}
+      },
+      color: {
+        value: '#007bff'
+      },
+      shape: {
+        type: 'circle',
+        stroke: {width: 0, color: '#000000'},
+        polygon: {nb_sides: 3}
+      },
+      size: {
+        value: 4,
+        random: true
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: '#007bff',
+        opacity: 0.18,
+        width: 1
+      },
+    }
+  };
 
-    this.myParams = {
-      particles: {
-        number: {
-          value: 80,
-          density: {enable: true, value_area: 800}
-        },
-        color: {
-          value: '#007bff'
-        },
-        shape: {
-          type: 'circle',
-          stroke: {width: 0, color: '#000000'},
-          polygon: {nb_sides: 3}
-        },
-        size: {
-          value: 4,
-          random: true
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#007bff',
-          opacity: 0.18,
-          width: 1
-        },
-      }
-    };
+  countUpOptions = {
+    useEasing: true,
+    useGrouping: true,
+    separator: ',',
+    decimal: '.',
+    autostart: false
+  };
 
-    this.countOptions = {
-      useEasing: true,
-      useGrouping: true,
-      separator: ',',
-      decimal: '.',
-      autostart: false
-    };
-
-    this.currencyCountOptions = {
-      useEasing: true,
-      useGrouping: true,
-      separator: ',',
-      decimal: '.',
-      prefix: '$'
-    };
-  }
+  countUpCurrencyOptions = {
+    useEasing: true,
+    useGrouping: true,
+    separator: ',',
+    decimal: '.',
+    prefix: '$'
+  };
 }

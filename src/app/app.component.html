@@ -3,15 +3,16 @@
   <nav class="navbar navbar-expand-md navbar-custom fixed-top">
     <div class="container">
 
-      <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">Samcoin</a>
+      <a class="navbar-brand" [routerLink]="['/']" (click)="navigationCollapsed = true">Samcoin</a>
 
-      <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" data-toggle="collapse"
+      <button class="navbar-toggler" type="button" (click)="navigationCollapsed = !navigationCollapsed"
+              data-toggle="collapse"
               data-target="#navbarCollapse" [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarCollapse"
               aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars fa-lg py-1 text-white"></i>
       </button>
 
-      <div class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarCollapse">
+      <div class="collapse navbar-collapse" [ngbCollapse]="navigationCollapsed" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
@@ -38,7 +39,7 @@
   </nav>
 </header>
 
-<particles id="particles" [params]="myParams" [style]="myStyle"></particles>
+<particles id="particles" [params]="particleParams" [style]="particleStyle"></particles>
 
 <section class="jumbotron text-center intro">
   <div class="container">
@@ -92,62 +93,66 @@
 <section class="jumbotron text-center comparison">
   <div class="container">
     <p class="comparison__title">One coin to rule them all.</p>
-    <table class="table table-light table-striped table-bordered" style="box-shadow: 0px 34px 25px -20px rgba(0,0,0,0.23)">
-      <thead>
-      <tr>
-        <th class="feature-header feature-header--primary" scope="col">FEATURES</th>
-        <th class="feature-header feature-header--secondary" scope="col">Samcoin</th>
-        <th class="feature-header" scope="col">Bitcoin</th>
-        <th class="feature-header" scope="col">Litecoin</th>
-        <th class="feature-header" scope="col">Ethereum</th>
-        <th class="feature-header" scope="col">Ripple</th>
-        <th class="feature-header" scope="col">NEO</th>
-        <th class="feature-header" scope="col">Monero</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th class="feature-label feature-label--primary" scope="row">Fidget Contracts</th>
-        <td class="feature-availability feature-availability--primary"><i class="fas fa-check"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-      </tr>
-      <tr>
-        <th class="feature-label feature-label--secondary" scope="row">Feeless</th>
-        <td class="feature-availability feature-availability--secondary"><i class="fas fa-check"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-      </tr>
-      <tr>
-        <th class="feature-label feature-label--primary" scope="row">Epic Coin Design</th>
-        <td class="feature-availability feature-availability--primary"><i class="fas fa-check"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-      </tr>
-      <tr>
-        <th class="feature-label feature-label--secondary" scope="row">Proof Of Spin</th>
-        <td class="feature-availability feature-availability--secondary"><i class="fas fa-check"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-        <td class="feature-availability"><i class="fas fa-minus"></i></td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-light table-striped table-bordered"
+             style="box-shadow: 0px 34px 25px -20px rgba(0,0,0,0.23)">
+        <thead>
+        <tr>
+          <th class="feature-header feature-header--primary" scope="col">FEATURES</th>
+          <th class="feature-header feature-header--secondary" scope="col">Samcoin</th>
+          <th class="feature-header" scope="col">Bitcoin</th>
+          <th class="feature-header" scope="col">Litecoin</th>
+          <th class="feature-header" scope="col">Ethereum</th>
+          <th class="feature-header" scope="col">Ripple</th>
+          <th class="feature-header" scope="col">NEO</th>
+          <th class="feature-header" scope="col">Monero</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th class="feature-label feature-label--primary" scope="row">Fidget Contracts</th>
+          <td class="feature-availability feature-availability--primary"><i class="fas fa-check"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <th class="feature-label feature-label--secondary" scope="row">Feeless</th>
+          <td class="feature-availability feature-availability--secondary"><i class="fas fa-check"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <th class="feature-label feature-label--primary" scope="row">Epic Coin Design</th>
+          <td class="feature-availability feature-availability--primary"><i class="fas fa-check"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+        </tr>
+        <tr>
+          <th class="feature-label feature-label--secondary" scope="row">Proof Of Spin</th>
+          <td class="feature-availability feature-availability--secondary"><i class="fas fa-check"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+          <td class="feature-availability"><i class="fas fa-minus"></i></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </section>
 
@@ -158,10 +163,12 @@
       <div class="col-md-6">
         <p class="graph__title">The Fastest Growing Network</p>
         <p class="graph__text">
-          Thanks to incentivization, Samcoin’s network has grown to 1,250 spinning fidgets per second since launch in 2016, meaning Samcoin’s peer-to-peer network is one of the largest in the world.
+          Thanks to incentivization, Samcoin’s network has grown to 1,250 spinning fidgets per second since launch in
+          2016, meaning Samcoin’s peer-to-peer network is one of the largest in the world.
         </p>
         <p class="graph__text">
-          More spinning fidgets means more secure services, and more capacity for end-users to access Samcoin from anywhere in the world, 24/7.
+          More spinning fidgets means more secure services, and more capacity for end-users to access Samcoin from
+          anywhere in the world, 24/7.
         </p>
         <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i
           class="fas fa-chart-line"></i> Network Stats</a>
@@ -169,15 +176,15 @@
       </div>
       <div class="col-md-6">
         <ngx-charts-line-chart
-          [scheme]="colorScheme"
-          [results]="single"
+          [scheme]="graphColorScheme"
+          [results]="graphData"
           [gradient]="true"
           [xAxis]="true"
           [yAxis]="true"
           [showXAxisLabel]="false"
           [showYAxisLabel]="true"
           yAxisLabel="Spinning / Second"
-          [autoScale]="autoScale">
+          [autoScale]="true">
         </ngx-charts-line-chart>
       </div>
     </div>
@@ -192,19 +199,20 @@
 
     <div class="row">
       <div class="col-sm">
-        <p class="statistics__value" [countUp]="countOptions" startVal="0" duration="4" endVal="59699000">0</p>
+        <p class="statistics__value" [countUp]="countUpOptions" startVal="0" duration="4" endVal="59699000">0</p>
         <p class="statistics__label">MAXIMUM COIN SUPPLY</p>
       </div>
       <div class="col-sm">
-        <p class="statistics__value" [countUp]="currencyCountOptions" startVal="0" duration="4" decimals="2" endVal="72.25">$0</p>
+        <p class="statistics__value" [countUp]="countUpCurrencyOptions" startVal="0" duration="4" decimals="2"
+           endVal="72.25">$0</p>
         <p class="statistics__label">PRICE</p>
       </div>
       <div class="col-sm">
-        <p class="statistics__value" [countUp]="countOptions" startVal="0" duration="4" endVal="873944">0</p>
+        <p class="statistics__value" [countUp]="countUpOptions" startVal="0" duration="4" endVal="873944">0</p>
         <p class="statistics__label">HOURS OF SPINNING</p>
       </div>
       <div class="col-sm">
-        <p class="statistics__value" [countUp]="countOptions" startVal="0" duration="4" endVal="120225125558">0</p>
+        <p class="statistics__value" [countUp]="countUpOptions" startVal="0" duration="4" endVal="120225125558">0</p>
         <p class="statistics__label">TOTAL MARKET CAP</p>
       </div>
     </div>
